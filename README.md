@@ -89,45 +89,4 @@ This project is part of thesis work in Nanjing university of science and technol
     * As a way to try to replicate the effects seen in HSIS, we expect the
       large resources' condition to give the edge to H1.
       
-     # Pseudocode
-     
-     ## HttpExperiment
-
-```swift
-button.fire {
-    bg.thread {
-        HttpBenchmarker.go()
-    }
-}
-
-class HttpBenchmarker {
-    func go() {
-        for vrsn in [1, 2] {
-            for rep in 1...numReps {
-                EventedHttp(
-                    httpVrsn,
-                    index: i,
-                    iphoneDisplay: screenRef,
-                    resultMgr: self
-                ).go()
-                sema.down()
-            }
-        }
-    }
-}
-
-class EventedHttp: Benchmarker, DownloadDelegate {
-    func collectResult(forIndex i: Int) {
-        let session = NSURLSession(config: myConfig, delegate: self)
-        session.resetThen {
-            note(Open)
-            session.downloadTask(url).resume()
-        }
-    }
-    Download.handle {
-        case Finished:
-            note(Closed)
-            resultMgr.addResult(notes, index: i, release: true)
-    }
-}
-```
+    
