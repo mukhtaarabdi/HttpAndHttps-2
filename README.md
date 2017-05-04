@@ -12,21 +12,11 @@ This project is part of thesis work in Nanjing university of science and technol
   phones_, which were indeed a major motivation for creating HTTP/2 in the
   first place.
 
-####Server
-
-We wanted to make sure the same framework would be used for both our H1 and H2 experimental trials.
-We dont include a server in this page.
-For this reason, Our app can communicate any designed server without problem.
 
 #### Server
 * We wanted to make sure the same framework would be used for both our H1 and
   H2 experimental trials.
 * For this reason, Our app can communicate any designed server without problem.
-
-####Client
-
-Apple's iOS 9 contains a (private) implementation of HTTP/2 which is used automatically [via ALPN] when the server says it's available.
-I found some code that allows one to selectively choose which H-vrsn to use based on whether you use NSURLConnection (no H2) or NSURLSession (H2 in > iOS 9)
 
 #### Client
 * Apple's iOS 9 contains a (private) implementation of HTTP/2 which is used
